@@ -93,7 +93,7 @@ def general_node(state: State) -> dict:
 def response_node(state: State) -> dict:
     """Generates the final answer, personalized using the student's programme."""
     query = state.messages[-1].content
-    programme = state.get("programme", "Unknown")
+    programme = state.programme
     context = state.retrieved_context
 
     if context == "NO_RETRIEVAL_NEEDED":
